@@ -52,7 +52,7 @@ if (!securePage($_SERVER['PHP_SELF'])){header('Location: http://newsite.anpac.ne
 		
 	</div>
 
-	<div ng-view style="display:inline-block;position:relative;top:50px;left:250px" ng-class="{reposition: (SideBarVis == one)}"></div>
+	<div ng-view style="display:inline-block;position:relative;top:60px;left:250px;min-width:90%" ng-class="{reposition: (SideBarVis == one)}"></div>
 	</div>	
 
 

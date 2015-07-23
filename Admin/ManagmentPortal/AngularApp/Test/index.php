@@ -1,128 +1,368 @@
 
-<body>
-<div class="container" style="margin-bottom:30px">
+<div style="width:100%; background-color:lightgrey;">
+<div class="container" style="margin-bottom:30px; background-color:white;width:100%;padding:15px;">
 	
 
-    <h3>Data Binding Fundamentals</h3>
-    <h4>Using a Data Binding Template</h4>
-    Customer Name: <input type="text" ng-model="cusName" ng-init="cusName='Mr White'" placeholder="Type something" /><br />
-	Your Name: <input type="text" ng-model="yName" ng-init="yName='Agent Name'" placeholder="Type something" /><br />
-	Message: <textarea style="height:200px; width=200px;"  ng-model="message" ng-init="message='Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
 
-Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.
-'" placeholder="Type something" ></textarea>
+    <h3>Lost Password Template</h3>
+    <h4>Using a Data Binding Template</h4>
+	<table>
+		<tr>
+			<td style="padding-right:10px;padding-bottom:5px;"> Customer Name: </td> <td><input type="text" ng-model="cusName" ng-init="cusName='Mr White'" placeholder="Type something" /><br /></td>
+		</tr><tr>
+			<td style="padding-right:10px;padding-bottom:5px;">Agency Name:</td> <td><input type="text" ng-model="AgencyName" ng-init="AgencyName='Johnson Financial'" placeholder="Type something" /><br /></td>
+		</tr><tr>
+				<td style="padding-right:10px;padding-bottom:5px;">Your Name:</td> <td><input type="text" ng-model="yName" ng-init="yName='Johnson Financial'" placeholder="Type something" /><br /></td>
+		</tr><tr>
+				<td style="padding-right:10px;padding-bottom:5px;">Message:</td> <td><textarea style="height:200px; width=600px;"  ng-model="message" ng-init="message=' Please login at #WEBSITEURL#login.php as soon as possible and change this password to something you will remember.'" placeholder="Type something" ></textarea></td>
+		</tr>
+	</table>
+	<div style="margin-left:auto%;margin-right:auto;display:block;position:relative;">
+	<button class='button'>
+		<i class="fa fa-envelope"></i>
+		Send Email
+		
+	</button>
+	<button class='button'>
+		<i class="fa fa-cloud-download"></i>
+		Download Source Code
+		
+	</button>
+	</div>
 </div>
 	
 	
 	
-<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#8d8e90">
+ <style type="text/css">
+    @import url(http://fonts.googleapis.com/css?family=Lato:400);
+
+    /* Take care of image borders and formatting */
+
+.button:hover {
+	border-top-color: #28597a;
+	background: #28597a;
+	color: #ccc;
+}
+
+.button:active {
+	border-top-color: #1b435e;
+	background: #1b435e;
+}
+
+.button {
+	background-color: #457393;
+	color: #29475F;
+	border-color: #29475F;
+	padding: 5px;
+	font-weight: bolder;
+	-webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+	-moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+	box-shadow: rgba(0,0,0,1) 0 1px 0;
+	text-shadow: rgba(0,0,0,.4) 0 1px 0;
+	color: #ccc;
+	border-radius:5px;
+}
+    img {
+      max-width: 600px;
+      outline: none;
+      text-decoration: none;
+      -ms-interpolation-mode: bicubic;
+    }
+
+    a {
+      text-decoration: none;
+      border: 0;
+      outline: none;
+    }
+
+    a img {
+      border: none;
+    }
+
+    /* General styling */
+
+    td, h1, h2, h3  {
+      font-family: Helvetica, Arial, sans-serif;
+      font-weight: 400;
+    }
+
+   .body {
+      -webkit-font-smoothing:antialiased;
+      -webkit-text-size-adjust:none;
+      width: 100%;
+      height: 100%;
+      color: #37302d;
+      background: #ffffff;
+    }
+
+     table {
+      border-collapse: collapse !important;
+    }
+
+
+    h1, h2, h3 {
+      padding: 0;
+      margin: 0;
+      color: #ffffff;
+      font-weight: 400;
+    }
+
+    h3 {
+      color: #21c5ba;
+      font-size: 24px;
+    }
+
+    .important-font {
+      color: #29475F;
+      font-weight: bold;
+    }
+
+    .hide {
+      display: none !important;
+    }
+
+    .force-full-width {
+      width: 100% !important;
+    }
+  </style>
+
+  <style type="text/css" media="screen">
+    @media screen {
+       /* Thanks Outlook 2013! http://goo.gl/XLxpyl*/
+      td, h1, h2, h3 {
+        font-family: 'Lato', 'Helvetica Neue', 'Arial', 'sans-serif' !important;
+      }
+    }
+  </style>
+
+  <style type="text/css" media="only screen and (max-width: 480px)">
+    /* Mobile styles */
+    @media only screen and (max-width: 480px) {
+      table[class="w320"] {
+        width: 320px !important;
+      }
+
+      table[class="w300"] {
+        width: 300px !important;
+      }
+
+      table[class="w290"] {
+        width: 290px !important;
+      }
+
+      td[class="w320"] {
+        width: 320px !important;
+      }
+
+      td[class="mobile-center"] {
+        text-align: center !important;
+      }
+
+      td[class*="mobile-padding"] {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        padding-bottom: 20px !important;
+      }
+
+      td[class*="mobile-block"] {
+        display: block !important;
+        width: 100% !important;
+        text-align: left !important;
+        padding-bottom: 20px !important;
+      }
+
+      td[class*="mobile-border"] {
+        border: 0 !important;
+      }
+
+      td[class*="reveal"] {
+        display: block !important;
+      }
+    }
+  </style>
+
+<section style="background-color:lightgrey; width:70%;padding:10px;display:block;position:relative;margin-left:auto;margin-right:auto">
+<div class="body" style="padding:0; margin:0; display:block; background:#ffffff; -webkit-text-size-adjust:none" bgcolor="#ffffff">
+<table align="center" cellpadding="0" cellspacing="0" width="100%" height="100%">
   <tr>
-    <td><table width="600" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF" align="center">
-        <tr>
-          <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <td align="center" valign="top" bgcolor="#ffffff"  width="100%">
+
+    <table cellspacing="0" cellpadding="0" width="100%">
+      <tr bgcolor="#457393">
+        <td style="border-bottom: 3px solid #29475F;" width="100%">
+          <center>
+            <table cellspacing="0" cellpadding="0" width="500" class="w320">
               <tr>
-                <td width="61"><a href= "http://yourlink" target="_blank"><img src="images/PROMO-GREEN2_01_01.jpg" width="61" height="76" border="0" alt=""/></a></td>
-                <td width="144"><a href= "http://yourlink" target="_blank"><img src="images/PROMO-GREEN2_01_02.jpg" width="144" height="76" border="0" alt=""/></a></td>
-                <td width="393"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <td valign="top" style="padding:5px 0; text-align:left;" class="mobile-center">
+                  <img width="100" height="100" src="http://newsite.anpac.net/Images/Logos/TempLogo2.png">
+					
+                </td>
+				  <td><h1 style="color:#29475F">{{AgencyName}}</h1></td>
+              </tr>
+            </table>
+          </center>
+        </td>
+      </tr>
+      <tr>
+        <td background="https://www.filepicker.io/api/file/kmlo6MonRpWsVuuM47EG" bgcolor="#8b8284" valign="top" style="background: url(http://newsite.anpac.net/Images/Backgrounds/MountainBackGround1.jpg); background-size:cover;background-repeat:no-repeat; background-color: #8b8284;background-position:0 40% ">
+          <!--[if gte mso 9]>
+          <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;height:303px;">
+            <v:fill type="tile" src="https://www.filepicker.io/api/file/kmlo6MonRpWsVuuM47EG" color="#8b8284" />
+            <v:textbox inset="0,0,0,0">
+          <![endif]-->
+          <div>
+            <center>
+              <table cellspacing="0" cellpadding="0" width="530" height="303" class="w320">
+                <tr>
+                  <td valign="middle" style="vertical-align:middle; padding-right: 15px; padding-left: 15px; text-align:left;" height="303">
+
+                    <table cellspacing="0" cellpadding="0" width="100%">
+                      <tr>
+                        <td>
+                          <h1>Forgot Password</h1><br>
+                          <h2>Your password has been reset, use the new password below.</h2>
+                          <br>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </center>
+          </div>
+          <!--[if gte mso 9]>
+            </v:textbox>
+          </v:rect>
+          <![endif]-->
+        </td>
+      </tr>
+      <tr class="force-full-width">
+        <td valign="top" class="force-full-width">
+          <center>
+            <table cellspacing="0" cellpadding="0" width="500" class="w320">
+              <tr>
+                <td valign="top" style="border-bottom:1px solid #a1a1a1;">
+
+                <table cellspacing="0" cellpadding="0" class="force-full-width">
+                  <tr>
+                    <td style="padding: 30px 0;" class="mobile-padding">
+
+                    <table class="force-full-width" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td style="text-align: left;">
+                          <span class="important-font">
+                            {{cusName}} <br>
+                          </span>
+                         
+                        </td>
+                        
+                      </tr>
+                    </table>
+
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding-bottom: 30px;" class="mobile-padding">
+
+                      <table class="force-full-width" cellspacing="0" cellpadding="0">
+                        <tr>
+
+                          <td class="mobile-block">
+                            <table cellspacing="0" cellpadding="0" class="force-full-width">
+                              <tr>
+                                <td class="mobile-border" style="background-color: #29475F; color: #ffffff; padding: 5px; border-right: 3px solid #ffffff; text-align:left;">
+                                  New Password
+                                </td>
+                              </tr>
+                              <tr>
+                                <td  style="background-color: #ebebeb; padding: 8px; border-top: 3px solid #ffffff; text-align:left;">
+                                  #Password#
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+
+                        </tr>
+                      </table>
+
+                    </td>
+                  </tr>
+                </table>
+
+
+                </td>
+              </tr>
+              <tr>
+                <td>
+
+                  <table cellspacing="0" cellpadding="0" width="100%">
                     <tr>
-                      <td height="46" align="right" valign="middle"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-                          <tr>
-                            <td width="67%" align="right"><font style="font-family:'Myriad Pro', Helvetica, Arial, sans-serif; color:#68696a; font-size:8px; text-transform:uppercase"><a href= "http://yourlink" style="color:#68696a; text-decoration:none"><strong>SEND TO A FRIEND</strong></a></font></td>
-                            <td width="29%" align="right"><font style="font-family:'Myriad Pro', Helvetica, Arial, sans-serif; color:#68696a; font-size:8px"><a href= "http://yourlink" style="color:#68696a; text-decoration:none; text-transform:uppercase"><strong>VIEW AS A WEB PAGE</strong></a></font></td>
-                            <td width="4%">&nbsp;</td>
-                          </tr>
-                        </table></td>
+                      <td class="mobile-padding" style="text-align:left;">
+                      <br>
+                       {{message}}
+                      <br>
+                      <br>
+                       -{{yName}}
+                      <br>
+                      <br>
+                      <br>
+
+                      </td>
                     </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </center>
+        </td>
+      </tr>
+      <tr>
+        <td style="background-color:#457393; border-top: 3px solid #29475F;">
+          <center>
+            <table cellspacing="0" cellpadding="0" width="500" class="w320">
+              <tr>
+                <td>
+                  <table cellspacing="0" cellpadding="30" width="100%">
                     <tr>
-                      <td height="30"><img src="images/PROMO-GREEN2_01_04.jpg" width="393" height="30" border="0" alt=""/></td>
+                      <td style="text-align:center;">
+                        <a href="#">
+                          <img width="61" height="51" src="https://www.filepicker.io/api/file/vkoOlof0QX6YCDF9cCFV" alt="twitter" />
+                        </a>
+                        <a href="#">
+                          <img width="61" height="51" src="https://www.filepicker.io/api/file/fZaNDx7cSPaE23OX2LbB" alt="google plus" />
+                        </a>
+                        <a href="#">
+                          <img width="61" height="51" src="https://www.filepicker.io/api/file/b3iHzECrTvCPEAcpRKPp" alt="facebook" />
+                        </a>
+                      </td>
                     </tr>
-                  </table></td>
-              </tr>
-            </table></td>
-        </tr>
-        <tr>
-          <td align="center">&nbsp;</td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
-              <tr>
-                <td width="10%">&nbsp;</td>
-                <td width="80%" align="left" valign="top"><font style="font-family: Georgia, 'Times New Roman', Times, serif; color:#010101; font-size:24px"><strong><em>Hi {{ cusName }},</em></strong></font><br /><br />
-                  <font style="font-family: Verdana, Geneva, sans-serif; color:#666766; font-size:13px; line-height:21px">
-<br /><br />
-{{ message }}
- <br /><br />
-On behalf of the Company<br />
-{{ yName }}</font></td>
-                <td width="10%">&nbsp;</td>
+                  </table>
+                </td>
               </tr>
               <tr>
-                <td>&nbsp;</td>
-                <td align="right" valign="top"><table width="108" border="0" cellspacing="0" cellpadding="0">
-                  <tr>
-                    <td><img src="images/PROMO-GREEN2_04_01.jpg" width="108" height="9" style="display:block" border="0" alt=""/></td>
-                  </tr>
-                  <tr>
-                    <td align="center" valign="middle" bgcolor="#666766"><font style="font-family: Georgia, 'Times New Roman', Times, serif; color:#ffffff; font-size:14px"><em><a href="http://yourlink" target="_blank" style="color:#ffffff; text-decoration: underline">click here</a></em></font></td>
-                  </tr>
-                  <tr>
-                    <td align="center" valign="middle" bgcolor="#666766"><font style="font-family: Georgia, 'Times New Roman', Times, serif; color:#ffffff; font-size:15px"><strong><a href="http://yourlink" target="_blank" style="color:#ffffff; text-decoration:none"><em>LOREM</em></a></strong></font></td>
-                  </tr>
-                  <tr>
-                    <td height="10" align="center" valign="middle" bgcolor="#666766"> </td>
-                  </tr>
-                </table></td>
-                <td>&nbsp;</td>
+                <td>
+                  <center>
+                    <table style="margin:0 auto;" cellspacing="0" cellpadding="5" width="100%">
+                      <tr>
+                        <td style="text-align:center; margin:0 auto;" width="100%" height="20px">
+                          
+                        </td>
+                      </tr>
+                    </table>
+                  </center>
+                </td>
               </tr>
-            </table></td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td><img src="images/PROMO-GREEN2_07.jpg" width="598" height="7" style="display:block" border="0" alt=""/></td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
-              <tr>
-                <td width="13%" align="center">&nbsp;</td>
-                <td width="14%" align="center"><font style="font-family:'Myriad Pro', Helvetica, Arial, sans-serif; color:#010203; font-size:9px; text-transform:uppercase"><a href= "http://yourlink" style="color:#010203; text-decoration:none"><strong>UNSUBSCRIBE </strong></a></font></td>
-                <td width="2%" align="center"><font style="font-family:'Myriad Pro', Helvetica, Arial, sans-serif; color:#010203; font-size:9px; text-transform:uppercase"><strong>|</strong></font></td>
-                <td width="9%" align="center"><font style="font-family:'Myriad Pro', Helvetica, Arial, sans-serif; color:#010203; font-size:9px; text-transform:uppercase"><a href= "http://yourlink" style="color:#010203; text-decoration:none"><strong>ABOUT </strong></a></font></td>
-                <td width="2%" align="center"><font style="font-family:'Myriad Pro', Helvetica, Arial, sans-serif; color:#010203; font-size:9px; text-transform:uppercase"><strong>|</strong></font></td>
-                <td width="10%" align="center"><font style="font-family:'Myriad Pro', Helvetica, Arial, sans-serif; color:#010203; font-size:9px; text-transform:uppercase"><a href= "http://yourlink" style="color:#010203; text-decoration:none"><strong>PRESS </strong></a></font></td>
-                <td width="2%" align="center"><font style="font-family:'Myriad Pro', Helvetica, Arial, sans-serif; color:#010203; font-size:9px; text-transform:uppercase"><strong>|</strong></font></td>
-                <td width="11%" align="center"><font style="font-family:'Myriad Pro', Helvetica, Arial, sans-serif; color:#010203; font-size:9px; text-transform:uppercase"><a href= "http://yourlink" style="color:#010203; text-decoration:none"><strong>CONTACT </strong></a></font></td>
-                <td width="2%" align="center"><font style="font-family:'Myriad Pro', Helvetica, Arial, sans-serif; color:#010203; font-size:9px; text-transform:uppercase"><strong>|</strong></font></td>
-                <td width="17%" align="center"><font style="font-family:'Myriad Pro', Helvetica, Arial, sans-serif; color:#010203; font-size:9px; text-transform:uppercase"><a href= "http://yourlink" style="color:#010203; text-decoration:none"><strong>STAY CONNECTED</strong></a></font></td>
-                <td width="4%" align="right"><a href="https://www.facebook.com/" target="_blank"><img src="images/PROMO-GREEN2_09_01.jpg" alt="facebook" width="21" height="19" border="0" /></a></td>
-                <td width="5%" align="center"><a href="https://twitter.com/" target="_blank"><img src="images/PROMO-GREEN2_09_02.jpg" alt="twitter" width="21" height="19" border="0" /></a></td>
-                <td width="4%" align="right"><a href="http://www.linkedin.com/" target="_blank"><img src="images/PROMO-GREEN2_09_03.jpg" alt="linkedin" width="21" height="19" border="0" /></a></td>
-                <td width="5%">&nbsp;</td>
-              </tr>
-            </table></td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td align="center"><font style="font-family:'Myriad Pro', Helvetica, Arial, sans-serif; color:#231f20; font-size:8px"><strong>Head Office &amp; Registered Office | Company name Ltd, Adress Line, Company Street, City, State, Zip Code | Tel: 123 555 555 | <a href= "http://yourlink" style="color:#010203; text-decoration:none">customercare@company.com</a></strong></font></td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
-        </tr>
-      </table></td>
+            </table>
+          </center>
+        </td>
+      </tr>
+    </table>
+    </td>
   </tr>
 </table>
+</div>
+	</section>
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
 
 
