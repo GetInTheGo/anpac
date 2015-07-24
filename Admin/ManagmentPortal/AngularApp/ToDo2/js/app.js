@@ -12,14 +12,19 @@ app.controller('ToDoCtrl', function($scope, filterFilter, $http, $location) {
 	
 	// Initializing vars
 	$scope.todos = [];
+	$scope.applicants = [];
+	
 	$scope.statusFilter = {};
 	$scope.placeholder = 'Chargement ...';
-	    $scope.list = ["one", "two", "three", "four", "five", "six"];
-	
+	    
+	    
 	// Getting all the tasks in database
 	$http.get('./functions/getTask.php').success(function(data){
 		$scope.todos = data;
 		$scope.placeholder = 'Add New Task';
+	});
+	$http.get('./functions/getApplicants.php').success(function(data){
+		$scope.applicants = data;
 	});
 	
 	// The $watch function count remaining tasks with a filter on "completed"
@@ -123,3 +128,4 @@ app.controller('ToDoCtrl', function($scope, filterFilter, $http, $location) {
 	}
 
 });
+
